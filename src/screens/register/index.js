@@ -22,7 +22,7 @@ export default function Register() {
     <View style={styles.container}>
       <View style={styles.viewImg}>
         <Image
-          source={require('../assets/logo/logoQuare.png')}
+          source={require('../../assets/logo/logoQuare.png')}
           style={styles.imgLogo}
           resizeMode="contain"></Image>
       </View>

@@ -10,6 +10,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../../assets/colors/Colors';
 import Notification from '../../screens/notification';
+import StackAuth from '../StackAuth';
+import StackCart from '../StackCart/indes';
 
 const Tab = createBottomTabNavigator();
 
@@ -53,7 +55,7 @@ const BottomTabMain = () => {
         />
         <Tab.Screen
           name={NAME.cart}
-          component={Cart}
+          component={StackCart}
           options={{
             tabBarIcon: ({color, size}) => (
               <AntDesign name="shoppingcart" color={color} size={size} />
@@ -62,7 +64,7 @@ const BottomTabMain = () => {
         />
         <Tab.Screen
           name={NAME.user}
-          component={Profile}
+          component={StackAuth}
           options={{
             tabBarIcon: ({color, size}) => (
               <AntDesign name="user" color={color} size={size} />

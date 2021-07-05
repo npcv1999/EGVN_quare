@@ -3,8 +3,9 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import Colors from '../../assets/colors/Colors';
 import BtnCart from '../../components/BtnCart';
+import ROUTES from '../../navigations/Routes';
 
-export default function AddressCart() {
+export default function AddressCart({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.header}></View>
@@ -32,9 +33,10 @@ export default function AddressCart() {
             borderColor: Colors.cyan,
             borderWidth: 1,
             marginHorizontal: 50,
-            top: 150,
+            marginTop: 50,
           }}
-          text="Giao đến địa chỉ này"></BtnCart>
+          text="Giao đến địa chỉ này"
+          onPress={() => navigation.navigate(ROUTES.CHECKOUT)}></BtnCart>
       </View>
     </View>
   );
