@@ -4,6 +4,7 @@ import Colors from '../../assets/colors/Colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   infoProd: {
     paddingHorizontal: 30,

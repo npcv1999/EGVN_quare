@@ -2,7 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../../screens/login';
 import Register from '../../screens/register';
-import ROUTES from '../Routes';
+import {ROUTES} from '../Routes';
 
 const Stack = createStackNavigator();
 

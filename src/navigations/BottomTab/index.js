@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  getFocusedRouteNameFromRoute,
+  NavigationContainer,
+} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../../screens/home';
-import Cart from '../../screens/cart';
-import Profile from '../../screens/user';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -12,6 +12,8 @@ import Colors from '../../assets/colors/Colors';
 import Notification from '../../screens/notification';
 import StackAuth from '../StackAuth';
 import StackCart from '../StackCart/indes';
+import StackHomeProd from '../StackProduct';
+import {ROUTES} from '../Routes';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +22,16 @@ const NAME = {
   notification: 'Thông báo',
   cart: 'Giỏ hàng',
   user: 'Tài khoản',
+};
+
+const getTabBarVisibility = route => {
+  const routeName = getFocusedRouteNameFromRoute(route) ?? '';
+
+  if (routeName === ROUTES.DETAIL) {
+    return false;
+  }
+
+  return true;
 };
 
 const BottomTabMain = () => {
@@ -33,12 +45,13 @@ const BottomTabMain = () => {
         }}>
         <Tab.Screen
           name={NAME.home}
-          component={Home}
-          options={{
+          component={StackHomeProd}
+          options={({route}) => ({
+            tabBarVisible: getTabBarVisibility(route),
             tabBarIcon: ({color, size}) => (
               <AntDesign name="home" color={color} size={size} />
             ),
-          }}
+          })}
         />
         <Tab.Screen
           name={NAME.notification}

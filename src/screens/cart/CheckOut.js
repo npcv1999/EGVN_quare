@@ -14,6 +14,7 @@ import BtnCyan from '../../components/BtnCyan';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import ViewShadow from '../../components/ViewShadow';
 import InfCheckOut from '../../components/InfCheckOut';
+import {ROUTES} from '../../navigations/Routes';
 
 const cate = [
   {
@@ -52,7 +53,7 @@ const cate = [
   },
 ];
 
-export default function CheckOut() {
+export default function CheckOut({navigation}) {
   const renderItem = ({item, index}) => (
     <View style={styles.viewItem}>
       <View style={{flex: 3}}>
@@ -138,6 +139,7 @@ export default function CheckOut() {
           {/* Button checkout */}
           <View>
             <BtnCart
+              onPress={() => navigation.navigate(ROUTES.SUCCESS)}
               color="white"
               text="THANH TOÁN"
               style={{

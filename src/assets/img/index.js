@@ -1,0 +1,23 @@
+const img = {
+  1: require('./cate/1.png'),
+  2: require('./cate/2.png'),
+  3: require('./cate/3.png'),
+  4: require('./cate/4.png'),
+  5: require('./cate/5.png'),
+  6: require('./cate/6.png'),
+  7: require('./cate/7.png'),
+  8: require('./cate/8.png'),
+  9: require('./cate/9.png'),
+  10: require('./cate/10.png'),
+  title: require('./logo/title.png'),
+  logo: require('./logo/logoQuare.png'),
+  thankyou: require('./logo/thankyou.png'),
+  chat: require('./icon/chat.png'),
+  cycle: require('./icon/cycle.png'),
+  pay: require('./icon/pay.png'),
+  shield: require('./icon/shield.png'),
+  info: require('./info.png'),
+  jbl: require('./jbl.png'),
+  slider1: require('./slider1.png'),
+};
+export default img;

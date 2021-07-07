@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import Colors from '../../assets/colors/Colors';
+import img from '../../assets/img';
 import BtnCyan from '../../components/BtnCyan';
 
 export default function Register() {
@@ -22,7 +23,7 @@ export default function Register() {
     <View style={styles.container}>
       <View style={styles.viewImg}>
         <Image
-          source={require('../../assets/logo/logoQuare.png')}
+          source={img.logo}
           style={styles.imgLogo}
           resizeMode="contain"></Image>
       </View>

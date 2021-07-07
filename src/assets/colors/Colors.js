@@ -9,4 +9,7 @@ export default {
   star: '#ff9933',
   addPic: '#edf1f4',
   bgLightGray: '#d9d9d9',
+  labelNotify: '#989797',
+  white: '#fff',
+  black: '#000',
 };

@@ -1,8 +1,9 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Colors from '../../assets/colors/Colors';
+import { W } from '../../utils/size';
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
+  container: { flex: 1 },
 
   searchBar: {
     marginHorizontal: 25,
@@ -49,23 +50,17 @@ const styles = StyleSheet.create({
 
     color: '#969699',
   },
-  viewHot: {
-    width: 'auto',
-    height: 350,
-    flexWrap: 'wrap',
-    marginVertical: 10,
-    justifyContent: 'flex-start',
-    backgroundColor: Colors.infoGray,
-  },
   hotItem: {
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: Colors.textGray,
-    width: 115,
+    width: (W - 60) / 3,
     alignItems: 'center',
-    marginBottom: 1,
-    marginRight: 0.5,
   },
-  info: {height: 40},
+  hotImg: {
+    marginVertical: -10,
+    width: (W - 60) / 3,
+  },
+  info: { height: 40 },
   rate: {
     alignItems: 'center',
     flexDirection: 'row',

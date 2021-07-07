@@ -11,7 +11,7 @@ import Colors from '../../assets/colors/Colors';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import BtnCart from '../../components/BtnCart';
-import ROUTES from '../../navigations/Routes';
+import {ROUTES} from '../../navigations/Routes';
 
 const cate = [
   {

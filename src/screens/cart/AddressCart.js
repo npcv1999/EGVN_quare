@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {TextInput} from 'react-native-paper';
 import Colors from '../../assets/colors/Colors';
 import BtnCart from '../../components/BtnCart';
-import ROUTES from '../../navigations/Routes';
+import {ROUTES} from '../../navigations/Routes';
 
 export default function AddressCart({navigation}) {
   return (

@@ -12,6 +12,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import Colors from '../../assets/colors/Colors';
 import {useNavigation} from '@react-navigation/native';
 import ROUTES from '../../navigations/Routes';
+import img from '../../assets/img';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -30,7 +31,7 @@ export default function Login() {
     <View style={styles.container}>
       <View style={styles.viewImg}>
         <Image
-          source={require('../../assets/logo/logoQuare.png')}
+          source={img.logo}
           style={styles.imgLogo}
           resizeMode="contain"></Image>
       </View>

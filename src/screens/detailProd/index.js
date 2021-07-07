@@ -10,12 +10,13 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import Colors from '../assets/colors/Colors';
-import BtnCart from '../components/BtnCart';
-import ViewPolicy from '../components/ViewPolicy';
+import Colors from '../../assets/colors/Colors';
+import BtnCart from '../../components/BtnCart';
+import ViewPolicy from '../../components/ViewPolicy';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import styles from './style';
+import img from '../../assets/img';
 
 const data = [
   {
@@ -79,7 +80,7 @@ const data = [
   },
 ];
 
-export default function DetailProd() {
+export default function DetailProd({navigation}) {
   const [count, setCount] = useState(0);
 
   const renderItem = ({item}) => (
@@ -173,13 +174,13 @@ export default function DetailProd() {
           {/* Components Policy */}
           <View style={styles.viewInfo}>
             <ViewPolicy
-              source={require('../assets/img/icon/shield.png')}
+              source={img.shield}
               label="Chính sách bảo hành"></ViewPolicy>
             <ViewPolicy
-              source={require('../assets/img/icon/cycle.png')}
+              source={img.cycle}
               label="Chính sách đổi trả trong 30 ngày"></ViewPolicy>
             <ViewPolicy
-              source={require('../assets/img/icon/pay.png')}
+              source={img.pay}
               label="Thanh toán khi nhận hàng"></ViewPolicy>
           </View>
 
@@ -232,9 +233,7 @@ export default function DetailProd() {
       <View style={styles.viewAddCart}>
         <View>
           <TouchableOpacity>
-            <Image
-              source={require('../assets/img/icon/chat.png')}
-              style={{width: 30, height: 30}}></Image>
+            <Image source={img.chat} style={{width: 30, height: 30}}></Image>
             <Text style={styles.txt_label}>Chat</Text>
           </TouchableOpacity>
         </View>
