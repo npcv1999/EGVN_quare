@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import Colors from '../../assets/colors/Colors';
-import { W } from '../../utils/size';
+import {W} from '../../utils/size';
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: {flex: 1},
 
   searchBar: {
     marginHorizontal: 25,
@@ -19,9 +19,10 @@ const styles = StyleSheet.create({
   },
   bodyHome: {
     flex: 1,
+    backgroundColor: 'white',
   },
   viewPadding: {
-    paddingHorizontal: 25,
+    paddingHorizontal: 20,
   },
   category: {
     justifyContent: 'center',
@@ -60,13 +61,13 @@ const styles = StyleSheet.create({
     marginVertical: -10,
     width: (W - 60) / 3,
   },
-  info: { height: 40 },
+  info: {height: 40},
   rate: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: 'auto',
-    backgroundColor: Colors.textGray,
+    backgroundColor: Colors.bgLightGray,
     width: '100%',
   },
   txtRate: {
@@ -88,6 +89,10 @@ const styles = StyleSheet.create({
   txtSale: {
     fontSize: 10,
     color: Colors.orange,
+  },
+  saleImg: {
+    width: (W - 50) / 2,
+    height: 100,
   },
 });
 export default styles;

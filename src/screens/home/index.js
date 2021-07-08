@@ -148,8 +148,55 @@ export default function Home({navigation}) {
               </View>
 
               <View style={{flex: 1}}>
-                <Text style={{textAlign: 'center'}}>CÁC SẢN PHẨM BÁN CHẠY</Text>
-                <View style={{alignItems: 'center'}}>
+                <View style={{alignItems: 'center', marginVertical: 10}}>
+                  <Text style={{textAlign: 'center'}}>
+                    CÁC SẢN PHẨM BÁN CHẠY
+                  </Text>
+                  <Image
+                    style={{
+                      height: 15,
+                    }}
+                    resizeMode="contain"
+                    source={img.title}></Image>
+                </View>
+
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                  <View>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(0, Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
+                  </View>
+                </ScrollView>
+              </View>
+
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  style={[styles.saleImg, {marginRight: 10}]}
+                  resizeMode="contain"
+                  source={img.slider1}></Image>
+                <Image
+                  style={styles.saleImg}
+                  resizeMode="contain"
+                  source={img.slider1}></Image>
+              </View>
+
+              {/* SAN PHAM NOI BAT */}
+              <View style={{flex: 1}}>
+                <View style={{alignItems: 'center', marginVertical: 10}}>
+                  <Text style={{textAlign: 'center'}}>
+                    CÁC SẢN PHẨM NỔI BẬT
+                  </Text>
                   <Image
                     style={{
                       height: 15,
