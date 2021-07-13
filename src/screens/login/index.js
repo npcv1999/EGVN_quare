@@ -11,7 +11,7 @@ import BtnCyan from '../../components/BtnCyan';
 import Feather from 'react-native-vector-icons/Feather';
 import Colors from '../../assets/colors/Colors';
 import {useNavigation} from '@react-navigation/native';
-import ROUTES from '../../navigations/Routes';
+import {ROUTES} from '../../navigations/Routes';
 import img from '../../assets/img';
 
 export default function Login() {

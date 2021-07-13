@@ -10,8 +10,9 @@ import {
 import Colors from '../../assets/colors/Colors';
 import img from '../../assets/img';
 import BtnCyan from '../../components/BtnCyan';
+import {ROUTES} from '../../navigations/Routes';
 
-export default function Register() {
+export default function Register({navigation}) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [mail, setMail] = useState('');
@@ -87,7 +88,7 @@ export default function Register() {
       <View style={styles.viwFooter}>
         <Text style={styles.txtLogin}>{`Đã có tài khoản? `}</Text>
 
-        <TouchableOpacity styeonPress={() => console.log('Đăng kí')}>
+        <TouchableOpacity onPress={() => navigation.navigate(ROUTES.LOGIN)}>
           <Text
             style={[
               styles.txtRegister,
