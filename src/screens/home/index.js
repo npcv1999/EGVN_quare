@@ -12,6 +12,8 @@ import Colors from '../../assets/colors/Colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import CyanHeader from '../../components/CyanHeader';
 import styles from './style';
+import img from '../../assets/img';
+import {ROUTES} from '../../navigations/Routes';
 
 const cate = [
   {
@@ -70,16 +72,48 @@ const cate = [
   },
 ];
 
-export default function Home() {
-  // const renderItem = ({item}) => (
-  //   <>
-  //     <TouchableOpacity>
-  //       <Image source={item.logo} style={styles.imgCate}></Image>
+export default function Home({navigation}) {
+  const renderItem = ({item}) => (
+    <View style={styles.hotItem}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate(ROUTES.DETAIL, {item: item})}>
+        <View style={styles.hotImg}>
+          <Image
+            style={styles.hotImg}
+            source={item.logo}
+            resizeMode="contain"></Image>
+        </View>
+      </TouchableOpacity>
 
-  //       <Text>{item.title}</Text>
-  //     </TouchableOpacity>
-  //   </>
-  // );
+      <View style={styles.info}>
+        <Text style={styles.txtCate}>{item.name}</Text>
+      </View>
+
+      <View style={styles.price}>
+        <View>
+          <Text style={styles.txtPrice}>1.500.000đ</Text>
+        </View>
+
+        <Text style={styles.txtSale}>1.500.000đ</Text>
+      </View>
+
+      <View style={styles.rate}>
+        <View style={{flexDirection: 'row'}}>
+          <AntDesign name="star" size={8} color={Colors.star}></AntDesign>
+          <AntDesign name="star" size={8} color={Colors.star}></AntDesign>
+          <AntDesign name="star" size={8} color={Colors.star}></AntDesign>
+          <AntDesign name="star" size={8} color={Colors.star}></AntDesign>
+          <AntDesign name="star" size={8} color={Colors.star}></AntDesign>
+        </View>
+
+        <Text style={styles.txtRate}>120 lượt xem</Text>
+      </View>
+    </View>
+  );
+
+  const ItemSeparatorComponent = () => (
+    <View style={{width: 115, height: 5}}></View>
+  );
 
   return (
     <>
@@ -114,77 +148,79 @@ export default function Home() {
               </View>
 
               <View style={{flex: 1}}>
-                <Text style={{textAlign: 'center'}}>CÁC SẢN PHẨM BÁN CHẠY</Text>
-                <View style={{alignItems: 'center'}}>
+                <View style={{alignItems: 'center', marginVertical: 10}}>
+                  <Text style={{textAlign: 'center'}}>
+                    CÁC SẢN PHẨM BÁN CHẠY
+                  </Text>
                   <Image
                     style={{
                       height: 15,
                     }}
                     resizeMode="contain"
-                    source={require('../../assets/logo/title.png')}></Image>
+                    source={img.title}></Image>
                 </View>
 
-                <ScrollView
-                  horizontal={true}
-                  style={{
-                    width: 'auto',
-                    height: 'auto',
-                    flex: 1,
-                  }}>
-                  <View style={styles.viewHot}>
-                    {cate.map((value, index) => (
-                      <View style={styles.hotItem} key={index}>
-                        <TouchableOpacity>
-                          <Image
-                            style={{
-                              flexDirection: 'column',
-                              width: 110,
-                              height: 100,
-                            }}
-                            source={value.logo}
-                            resizeMode="cover"></Image>
-                        </TouchableOpacity>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                  <View>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(0, Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
+                  </View>
+                </ScrollView>
+              </View>
 
-                        <View style={styles.info}>
-                          <Text style={styles.txtCate}>{value.name}</Text>
-                        </View>
+              <View style={{flexDirection: 'row'}}>
+                <Image
+                  style={[styles.saleImg, {marginRight: 10}]}
+                  resizeMode="contain"
+                  source={img.slider1}></Image>
+                <Image
+                  style={styles.saleImg}
+                  resizeMode="contain"
+                  source={img.slider1}></Image>
+              </View>
 
-                        <View style={styles.price}>
-                          <View>
-                            <Text style={styles.txtPrice}>1.500.000đ</Text>
-                          </View>
+              {/* SAN PHAM NOI BAT */}
+              <View style={{flex: 1}}>
+                <View style={{alignItems: 'center', marginVertical: 10}}>
+                  <Text style={{textAlign: 'center'}}>
+                    CÁC SẢN PHẨM NỔI BẬT
+                  </Text>
+                  <Image
+                    style={{
+                      height: 15,
+                    }}
+                    resizeMode="contain"
+                    source={img.title}></Image>
+                </View>
 
-                          <Text style={styles.txtSale}>1.500.000đ</Text>
-                        </View>
-
-                        <View style={styles.rate}>
-                          <View style={{flexDirection: 'row'}}>
-                            <AntDesign
-                              name="star"
-                              size={8}
-                              color={Colors.star}></AntDesign>
-                            <AntDesign
-                              name="star"
-                              size={8}
-                              color={Colors.star}></AntDesign>
-                            <AntDesign
-                              name="star"
-                              size={8}
-                              color={Colors.star}></AntDesign>
-                            <AntDesign
-                              name="star"
-                              size={8}
-                              color={Colors.star}></AntDesign>
-                            <AntDesign
-                              name="star"
-                              size={8}
-                              color={Colors.star}></AntDesign>
-                          </View>
-
-                          <Text style={styles.txtRate}>120 lượt xem</Text>
-                        </View>
-                      </View>
-                    ))}
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                  <View>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(0, Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
+                    <FlatList
+                      contentContainerStyle={{flexDirection: 'row'}}
+                      data={cate.slice(Math.ceil(cate.length / 2))}
+                      renderItem={renderItem}
+                      ItemSeparatorComponent={
+                        ItemSeparatorComponent
+                      }></FlatList>
                   </View>
                 </ScrollView>
               </View>

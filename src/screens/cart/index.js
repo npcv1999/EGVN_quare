@@ -11,6 +11,7 @@ import Colors from '../../assets/colors/Colors';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import BtnCart from '../../components/BtnCart';
+import {ROUTES} from '../../navigations/Routes';
 
 const cate = [
   {
@@ -79,7 +80,7 @@ const cate = [
   },
 ];
 
-export default function Cart() {
+export default function Cart({navigation}) {
   const [count, setCount] = useState(1);
   const [data, setData] = useState(cate);
   const quantityHandler = (action, id) => {
@@ -169,7 +170,8 @@ export default function Cart() {
         <BtnCart
           text="TIẾN HÀNH ĐẶT HÀNG"
           color="white"
-          style={{backgroundColor: Colors.orange}}></BtnCart>
+          style={{backgroundColor: Colors.orange}}
+          onPress={() => navigation.navigate(ROUTES.ADDRESSCART)}></BtnCart>
       </View>
     </View>
   );

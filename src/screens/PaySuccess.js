@@ -1,13 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import img from '../assets/img';
 
 export default function PaySuccess() {
   return (
     <View style={styles.container}>
-      <Image
-        style={{width: 250, height: 250}}
-        source={require('../assets/logo/thankyou.png')}></Image>
+      <Image style={{width: 250, height: 250}} source={img.thankyou}></Image>
       <Text style={styles.txtTks}>Đơn hàng của quý khách đang được xử lý!</Text>
       <Text style={styles.txtTks}>
         Mã đơn hàng :
@@ -35,6 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 80,
+    backgroundColor: 'white',
   },
   txtTks: {
     fontFamily: 'Helvetica',

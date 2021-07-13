@@ -7,11 +7,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Colors from '../assets/colors/Colors';
-import BtnCyan from '../components/BtnCyan';
+import BtnCyan from '../../components/BtnCyan';
 import Feather from 'react-native-vector-icons/Feather';
+import Colors from '../../assets/colors/Colors';
+import {useNavigation} from '@react-navigation/native';
+import {ROUTES} from '../../navigations/Routes';
+import img from '../../assets/img';
 
 export default function Login() {
+  const navigation = useNavigation();
+
   const [icon, setIcon] = useState('eye-off');
   const [secure, setSecure] = useState(true);
   const [usr, setUsr] = useState('');
@@ -26,7 +31,7 @@ export default function Login() {
     <View style={styles.container}>
       <View style={styles.viewImg}>
         <Image
-          source={require('../assets/logo/logoQuare.png')}
+          source={img.logo}
           style={styles.imgLogo}
           resizeMode="contain"></Image>
       </View>
@@ -70,7 +75,7 @@ export default function Login() {
       <View style={styles.viwFooter}>
         <Text style={styles.txtRegister}>{`Bạn chưa có tài khoản? `}</Text>
 
-        <TouchableOpacity onPress={() => console.log('Đăng kí')}>
+        <TouchableOpacity onPress={() => navigation.navigate(ROUTES.REGIST)}>
           <Text
             style={[
               styles.txtRegister,
